@@ -65,10 +65,10 @@ gl.fst.pop(snpAcacia)
 
 #### AMOVA ####
 # AMOVA is used to detect whether or not there is significant population structure
-AMOVA_snp <- gl.amova(snpkig)
+AMOVA_snp <- gl.amova(snpAcacia)
 AMOVA_snp
 
-AMOVA_Scores <- gl.amova(Scoreskig)
+AMOVA_Scores <- gl.amova(ScoresAcacia)
 AMOVA_Scores
 
 # PCA Analysis
@@ -111,6 +111,7 @@ gl.map.structure(qmat, K=3, snpAcacia, scalex=1, scaley=0.5)
 gl.hwe.pop(snpAcacia)
 
 ################### Mantel test ############
+
 mantelTest <- gl.ibd(snpAcacia)
 
 print(mantelTest)
@@ -119,7 +120,7 @@ print(mantelTest)
 ############## Report private alleles in one population compared with a second population ##############
 gl.report.pa(snpAcacia)
 
-gl.grm(snpAcacia)
+gl.grm(snpAcacia) #identity by descent matrix
 
 ########## Distances #########
 
