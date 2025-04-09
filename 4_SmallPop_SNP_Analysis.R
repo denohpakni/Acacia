@@ -95,21 +95,11 @@ load("snp5gl_filtered.rdata")
 
 
 #####------------------ Distance and NJ tree for SNPs ----------------#####
-library(poppr)
-
-library(ape)
 
 gl.tree.nj(snp5gl)
 
-snpinfo <- read.csv("acacia_pop.csv")
+gl.recalc.metrics(snp5gl)
 
-ggtree(snp8gi, layout="circular")%<+% snpinfo %>% +
-  geom_point(size=1, aes(color=pop))+
-  geom_tree(aes(color=pop))+
-  geom_tiplab(aes(label=label), color="black",size=1.5)+
-  scale_color_manual(values = c("#fc5623",
-                                "#B931FC", 
-                                "#EE9322", 
-                                "#00ff00"),
-                     labels = c("kitui","tsavo","naivasha","rongai"))
+
+gl.report.maf(snp5gl)
 
